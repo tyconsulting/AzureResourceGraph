@@ -1,6 +1,6 @@
 # Azure Resource Graph Queries - General
 
 #### Count Resources by types and locations
-~~~ Query
+```OQL
 summarize count() by type, location
-~~~
+```

@@ -1,7 +1,7 @@
 # Azure Resource Graph Collection
 
 ## Description
-This repository contains my Collection of Azure Resource Graph related resources such as sample scripts and Resource Graph Queries
+This repository contains my Collection of Azure Resource Graph related resources such as sample scripts and Resource Graph Queries.
 
 ## How-To
 The following pages demonstrate how to invoke Azure Resource graph queries via different methods.
@@ -18,6 +18,10 @@ The following page demonstrate how to invoke Azure Resource Graph queries using 
 The following page demonstrate how to use the Azure Resource Graph Explorer within the Azure portal:
 * [Azure Resource Graph Explorer](How-To%2FResource-Graph-Explorer.md)
 
+#### Sample Scripts
+Collection of PowerShell scripts around Azure Resource Graph:
+* [PowerShell Script](How-To%2FPS-Scripts.md)
+
 #### Postman
 The following page demonstrate how to invoke the Resource Graph REST API via Postman
 * [Postman](How-To%2FPostman.md)
@@ -26,7 +30,10 @@ The following page demonstrate how to invoke the Resource Graph REST API via Pos
 The sample queries are grouped into the following categories:
 * [General](Queries%2FGeneral.md)
 * [Compute](Queries%2FCompute.md)
+* [Monitoring](Queries%2FMonitoring.md)
 * [Storage](Queries%2FStorage.md)
+
+
 
 ## References
 #### Inside Azure Management book
