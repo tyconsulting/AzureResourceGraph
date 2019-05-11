@@ -1,4 +1,4 @@
-# Azure Resource Graph Queries - Compute
+# Azure Resource Graph Queries - Monitoring
 
 #### Get all Log Analytics workspaces
 ```OQL
