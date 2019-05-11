@@ -37,6 +37,8 @@ The sample queries are grouped into the following categories:
 
 ## References
 #### Inside Azure Management book
+![Inside Azure Management Book](images/inside-azure-mgmt-cover.jpg)
+
 Azure Resource Graph is explained in details in chapter 2 of the Inside Azure Management book. This book can be downloaded at:
 * [Download Inside Azure Management book](https://bit.ly/InsideAzureMgmt)
 
