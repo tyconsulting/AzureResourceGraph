@@ -13,9 +13,9 @@ To use this script, you must install the [AzureServicePrincipalAccount](https://
 Install-Module AzureServicePrincipalAccount -Repository PSGallery -Force
 ~~~
 
-### 2. Get All subscriptions in a maagement group
+### 2. Get All subscriptions in a management group
 When invoking Azure Resource Graph queries, you must provide a list of subscriptions that you wish to query. This is rather static and inflexible. In a large or dynamic environment, when new subscriptions get created frequently, it would be nice if you can target your resource graph query to all subscriptions placed under a management group hierarchy.
-This sample script provides a function to retrieve Ids of all subscriptions under one or more management groups.
+This sample script provides a function to retrieve Ids of all subscriptions under one or more management groups. You can then pass the list of subscription Ids to the ***InvokeResourceGraphQuery*** function from the preview sample script.
 
 * **Sample Script:** [GetSubscriptionsbyMG.ps1](../Scripts/GetSubscriptionsbyMG.ps1)
 
