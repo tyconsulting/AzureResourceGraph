@@ -7,31 +7,31 @@ This repository contains my Collection of Azure Resource Graph related resources
 The following pages demonstrate how to invoke Azure Resource graph queries via different methods.
 #### Command-line Interfaces (CLI)
 The following code samples demonstrates how to invoke Azure Resource Graph queries using using CLI:
-* [PowerShell](How-To%2FPowerShell.md)
-* [Azure CLI](How-To%2FAzureCLI.md)
+* [PowerShell](How-To/PowerShell.md)
+* [Azure CLI](How-To/AzureCLI.md)
 
 #### Azure Resource Manager (ARM) REST API
 The following page demonstrate how to invoke Azure Resource Graph queries using Azure Resource Manager (ARM) REST API:
-* [ARM REST API](How-To%2FARM-REST-API.md)
+* [ARM REST API](How-To/ARM-REST-API.md)
 
 #### Azure Resource Graph Explorer
 The following page demonstrate how to use the Azure Resource Graph Explorer within the Azure portal:
-* [Azure Resource Graph Explorer](How-To%2FResource-Graph-Explorer.md)
+* [Azure Resource Graph Explorer](How-To/Resource-Graph-Explorer.md)
 
 #### Sample Scripts
 Collection of PowerShell scripts around Azure Resource Graph:
-* [PowerShell Script](How-To%2FPS-Scripts.md)
+* [PowerShell Script](How-To/PS-Scripts.md)
 
 #### Postman
 The following page demonstrate how to invoke the Resource Graph REST API via Postman
-* [Postman](How-To%2FPostman.md)
+* [Postman](How-To/Postman.md)
 
 ## Sample Queries
 The sample queries are grouped into the following categories:
-* [General](Queries%2FGeneral.md)
-* [Compute](Queries%2FCompute.md)
-* [Monitoring](Queries%2FMonitoring.md)
-* [Storage](Queries%2FStorage.md)
+* [General](Queries/General.md)
+* [Compute](Queries/Compute.md)
+* [Monitoring](Queries/Monitoring.md)
+* [Storage](Queries/Storage.md)
 
 
 
