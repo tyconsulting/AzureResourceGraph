@@ -32,7 +32,7 @@ The sample queries are grouped into the following categories:
 * [Compute](Queries/Compute.md)
 * [Monitoring](Queries/Monitoring.md)
 * [Storage](Queries/Storage.md)
-
+* [Networking](Queries/Network.md)
 
 
 ## References
