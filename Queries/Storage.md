@@ -3,7 +3,19 @@
 #### List all public-facing storage accounts
 
 ```OQL
-where type =~ 'microsoft.storage/storageAccounts' and aliases['Microsoft.Storage/storageAccounts/networkAcls.defaultAction'] == 'Allow'
+resources
+| where type =~ 'microsoft.storage/storageAccounts'
+| extend networkACLs_defaultAction=parse_json(properties.networkAcls).defaultAction
+| where networkACLs_defaultAction =~ 'allow'
+```
+
+#### List all storage accounts that have Service Endpoint enabled
+
+```OQL
+resources
+| where type =~ 'microsoft.storage/storageAccounts'
+| extend networkACLs_defaultAction=parse_json(properties.networkAcls).defaultAction
+| where networkACLs_defaultAction =~ 'deny'
 ```
 
 ### List all storage accounts that do not use customer-managed encryption keys
