@@ -33,7 +33,8 @@ The sample queries are grouped into the following categories:
 * [Monitoring](Queries/Monitoring.md)
 * [Storage](Queries/Storage.md)
 * [Networking](Queries/Network.md)
-
+* [SQL Server](Queries/SQL_PaaS.md)
+* [SQL Managed Instance](Queries/SQL_MI.md)
 
 ## References
 #### Inside Azure Management book
