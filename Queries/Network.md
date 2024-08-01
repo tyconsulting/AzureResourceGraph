@@ -35,10 +35,11 @@ Resources
 | extend nsgId = id
 | extend nsgName = name
 | extend nsgLocation = location
+| join kind=leftouter (resourcecontainers | where type =='microsoft.resources/subscriptions' | project subscriptionName=name, subscriptionId) on subscriptionId
 | join kind=leftouter (
     Resources
     | where type =~ 'microsoft.network/networkwatchers/flowlogs'
     | project flowLogName = name, flowLogId=id, flowLogEnabled = properties.enabled, flowLogStorageId = properties.storageId, flowLogTrafficAnalyticsEnabled = properties.flowAnalyticsConfiguration.networkWatcherFlowAnalyticsConfiguration.enabled, flowLogLogAnalyticsId = properties.flowAnalyticsConfiguration.networkWatcherFlowAnalyticsConfiguration.workspaceResourceId, nsgId = tostring(properties.targetResourceId))
 on nsgId
-| project nsgId, nsgName, nsgLocation, flowLogId, flowLogName, flowLogEnabled, flowLogStorageId, flowLogTrafficAnalyticsEnabled, flowLogLogAnalyticsId
+| project nsgId, nsgName, nsgLocation, subscriptionName, flowLogId, flowLogName, flowLogEnabled, flowLogStorageId, flowLogTrafficAnalyticsEnabled, flowLogLogAnalyticsId
 ```
