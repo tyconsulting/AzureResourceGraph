@@ -27,3 +27,17 @@ resources
 |project SubscriptionName, resourceGroup, nsg_name, rule_name, subnets, direction, priority, action, source, source_port, destination, destination_port, description, subscriptionId, id
 |sort by SubscriptionName, resourceGroup asc, nsg_name, direction asc, priority asc
 ```
+### List all Network Security Groups and NSG Flow Logs Configuration
+
+```OQL
+Resources
+| where type =~ 'microsoft.network/networksecuritygroups'
+| extend nsgId = id
+| extend nsgName = name
+| join kind=leftouter (
+    Resources
+    | where type =~ 'microsoft.network/networkwatchers/flowlogs'
+    | project flowLogName = name, flowLogId=id, flowLogEnabled = properties.enabled, flowLogStorageId = properties.storageId, flowLogTrafficAnalyticsEnabled = properties.flowAnalyticsConfiguration.networkWatcherFlowAnalyticsConfiguration.enabled, flowLogLogAnalyticsId = properties.flowAnalyticsConfiguration.networkWatcherFlowAnalyticsConfiguration.workspaceResourceId, nsgId = tostring(properties.targetResourceId))
+on nsgId
+| project nsgId, nsgName, flowLogId, flowLogName, flowLogEnabled, flowLogStorageId, flowLogTrafficAnalyticsEnabled, flowLogLogAnalyticsId
+```
