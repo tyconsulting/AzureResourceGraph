@@ -31,6 +31,7 @@ The sample queries are grouped into the following categories:
 * [General](Queries/General.md)
 * [Compute](Queries/Compute.md)
 * [Monitoring](Queries/Monitoring.md)
+* [Role Assignment](Queries/RoleAssignment.md)
 * [Storage](Queries/Storage.md)
 * [Networking](Queries/Network.md)
 * [SQL Server](Queries/SQL_PaaS.md)
