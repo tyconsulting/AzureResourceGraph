@@ -54,5 +54,5 @@ Resources
 | mv-expand subnets
 | extend serviceEndpoints = subnets.properties.serviceEndpoints
 | where array_length(serviceEndpoints) != 0 and isnotnull(serviceEndpoints)
-| project name, subnets.name, subnets.properties.addressPrefix, location, resourceGroup, subscriptionId, serviceEndpoints
+| project vnet=name, subnet=subnets.name, addressPrefix=subnets.properties.addressPrefix, location, resourceGroup, subscriptionId, serviceEndpoints
 ```
