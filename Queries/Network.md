@@ -27,6 +27,7 @@ resources
 |project SubscriptionName, resourceGroup, nsg_name, rule_name, subnets, direction, priority, action, source, source_port, destination, destination_port, description, subscriptionId, id
 |sort by SubscriptionName, resourceGroup asc, nsg_name, direction asc, priority asc
 ```
+
 ### List all Network Security Groups and NSG Flow Logs Configuration
 
 ```OQL
@@ -42,4 +43,16 @@ Resources
     | project flowLogName = name, flowLogId=id, flowLogEnabled = properties.enabled, flowLogStorageId = properties.storageId, flowLogTrafficAnalyticsEnabled = properties.flowAnalyticsConfiguration.networkWatcherFlowAnalyticsConfiguration.enabled, flowLogLogAnalyticsId = properties.flowAnalyticsConfiguration.networkWatcherFlowAnalyticsConfiguration.workspaceResourceId, nsgId = tostring(properties.targetResourceId))
 on nsgId
 | project nsgId, nsgName, nsgLocation, subscriptionName, flowLogId, flowLogName, flowLogEnabled, flowLogStorageId, flowLogTrafficAnalyticsEnabled, flowLogLogAnalyticsId
+```
+
+#### List all Subnets that have Service Endpoints enabled
+
+```OQL
+Resources
+| where type == 'microsoft.network/virtualnetworks'
+| extend subnets = properties.subnets
+| mv-expand subnets
+| extend serviceEndpoints = subnets.properties.serviceEndpoints
+| where array_length(serviceEndpoints) != 0 and isnotnull(serviceEndpoints)
+| project name, subnets.name, subnets.properties.addressPrefix, location, resourceGroup, subscriptionId, serviceEndpoints
 ```
